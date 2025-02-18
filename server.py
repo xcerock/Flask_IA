@@ -174,3 +174,7 @@ def add_by_uuid():
         return {"message": "data not defined"}, 500
 
     return {"message": f"{new_person['id']}"}, 200
+
+@app.errorhandler(404)
+def api_not_found(error):
+    return {"message": "API not found"}, 404
